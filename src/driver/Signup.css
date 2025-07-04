@@ -1,0 +1,158 @@
+/* Signup.css */
+
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f9fafb, #f1f5f9);
+  padding: 2rem;
+}
+
+.signup-container {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.signup-image-section {
+  flex: 1;
+  background: #f1f5f9;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-image-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.signup-image-section p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.signup-image-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.signup-form-section {
+  flex: 1;
+  padding: 3rem;
+}
+
+.signup-form-section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group-inline {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group-inline input {
+  flex: 1;
+}
+
+.signup-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: 0.2s;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.error-banner {
+  background-color: #fee2e2;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #b91c1c;
+  text-align: center;
+}
+
+.signup-form button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+  background-color: #4f46e5;
+}
+
+.signup-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-footer a {
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-image-section {
+    display: none;
+  }
+
+  .signup-form-section {
+    padding: 2rem;
+  }
+}

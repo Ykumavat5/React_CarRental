@@ -1,0 +1,250 @@
+
+/* Base font */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background: linear-gradient(135deg, #667eea, #764ba2); */
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.form-container {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  align-items: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Logo */
+.logo img {
+  width: 200px;
+  margin-bottom: 1.5rem;
+  margin-left: 6.5rem;
+}
+
+/* Heading */
+.auth-form h2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Inputs */
+.auth-form input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.25rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 8px #667eeaaa;
+}
+
+/* Button */
+.auth-form button {
+  width: 100%;
+  padding: 1rem 0;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.5);
+  transition: background 0.3s ease;
+}
+
+.auth-form button:disabled {
+  background: #a2a6c7;
+  cursor: not-allowed;
+}
+
+.auth-form button:hover:not(:disabled) {
+  /* background: linear-gradient(90deg, #5a67d8, #5c47aa); */
+  box-shadow: 0 8px 20px rgba(90, 103, 216, 0.7);
+}
+
+/* Error messages */
+.error {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  text-align: start;
+  padding-left: 2rem;
+}
+
+.errors-message{
+  color: #e53e3e;
+  text-align: center;
+  margin-bottom: 5px;
+  transition: opacity 0.3s ease;
+}
+
+/* Links */
+.auth-form p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.auth-form p a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-form p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+/* @media (max-width: 480px) {
+  .form-container {
+    margin: 1rem 1.5rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .auth-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .auth-form input {
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+
+  .auth-form button {
+    font-size: 1.1rem;
+    padding: 0.9rem 0;
+    border-radius: 10px;
+  }
+} */
+
+@media (max-width: 480px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+  }
+
+  .form-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .auth-form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .logo img {
+    width: 200px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .auth-form h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .auth-form input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  .auth-form button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+
+  .auth-form p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 2rem;
+  }
+
+  .error,
+  .errors-message {
+    font-size: 0.85rem;
+    padding-left: 0.5rem;
+    text-align: left;
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+.spinner {
+  border: 3px solid #fff;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

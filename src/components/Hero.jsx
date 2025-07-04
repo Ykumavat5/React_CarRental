@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import BgShape from "../images/hero/hero-bg.png";
 import HeroCar from "../images/hero/main-car.png";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 function Hero() {
   const [goUp, setGoUp] = useState(false);
@@ -73,7 +75,7 @@ function Hero() {
           onClick={scrollToTop}
           className={`scroll-up ${goUp ? "show-scroll" : ""}`}
         >
-          <i className="fa-solid fa-angle-up"></i>
+          <FontAwesomeIcon icon={faAngleUp} />
         </div>
       </section>
     </>

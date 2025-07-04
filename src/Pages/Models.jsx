@@ -7,10 +7,14 @@ import CarImg4 from "../images/cars-big/bmw-box.png";
 import CarImg5 from "../images/cars-big/benz-box.png";
 import CarImg6 from "../images/cars-big/passat-box.png";
 import { Link } from "react-router-dom";
+import Head from "../layout/WebsiteHead";
+import "../../src/dist/styles.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Models() {
   return (
     <>
+      <Head />
       <section className="models-section">
         <HeroPages name="Vehicle Models" />
         <div className="container">

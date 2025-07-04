@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Logo from "../images/logo/logo.png";
 import { useState } from "react";
+import { useAuth } from "../Context/AuthContext";
 
 function Navbar() {
+  const { user, logout } = useAuth();
   const [nav, setNav] = useState(false);
 
   const openNav = () => {
@@ -29,8 +31,8 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/models">
-                Models
+              <Link onClick={openNav} to="/myrides">
+                My Rides
               </Link>
             </li>
             <li>
@@ -46,6 +48,12 @@ function Navbar() {
             <li>
               <Link onClick={openNav} to="/contact">
                 Contact
+              </Link>
+            </li>
+
+            <li>
+              <Link onClick={logout} to="/">
+                Logout
               </Link>
             </li>
           </ul>
@@ -73,8 +81,8 @@ function Navbar() {
             </li>
             <li>
               {" "}
-              <Link className="models-link" to="/models">
-                Vehicle Models
+              <Link className="models-link" to="/myrides">
+                My rides
               </Link>
             </li>
             <li>
@@ -95,15 +103,25 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            {user && (
+              <Link className="navbar__buttons__sign-in" onClick={logout} to='/'>
+                Logout
+              </Link>
+            )}
           </ul>
+          {!user && (
+
           <div className="navbar__buttons">
-            <Link className="navbar__buttons__sign-in" to="/">
+            <Link className="navbar__buttons__sign-in" to="/login">
               Sign In
             </Link>
-            <Link className="navbar__buttons__register" to="/">
+            <Link className="navbar__buttons__register" to="/register">
               Register
             </Link>
           </div>
+
+         )}
+
 
           {/* mobile */}
           <div className="mobile-hamb" onClick={openNav}>
@@ -114,5 +132,28 @@ function Navbar() {
     </>
   );
 }
+// {!user && (
+              
+//   <div className="navbar__buttons">
+//     <Link className="navbar__buttons__sign-in" to="/login">
+//       Sign In
+//     </Link>
+//     <Link className="navbar__buttons__register" to="/register">
+//       Register
+//     </Link>
+//   </div>
 
+// )}
+// {user && (
+// <Link className="navbar__buttons__sign-in" onClick={logout} to='/logout'>
+//   Logout
+// </Link>
+// // <button
+// //   className="navbar__buttons__logout btn" style={{ border: "none" }}
+// //   onClick={logout}
+// //   type="button"
+// // >
+// //   Logout
+// // </button>
+// )}
 export default Navbar;

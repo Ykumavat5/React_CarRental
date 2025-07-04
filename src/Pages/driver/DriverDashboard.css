@@ -1,0 +1,128 @@
+/* DriverDashboard.css */
+.driver-dashboard {
+    max-width: 900px;
+    margin: 10rem auto;
+    padding: 2rem 1rem;
+    background: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow: auto;
+    
+}
+
+.status-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.status-line p {
+    margin: 0.3rem 0;
+    flex: 1 1 auto;
+    min-width: 150px;
+    color: #555;
+}
+
+.ride-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ride-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.3rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.ride-list li:hover {
+    box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+}
+
+.ride-info {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.accept-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.accept-btn:hover,
+.accept-btn:focus {
+    background: #0056b3;
+    outline: none;
+}
+
+.reject-btn {
+    background: rgb(247, 59, 59);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .driver-dashboard {
+        max-width: 100%;
+        /* margin: 20rem 1rem; */
+        margin-top: 250px;
+        padding: 1rem;
+    }
+
+    .status-line {
+        font-size: 1rem;
+    }
+
+    .ride-info {
+        font-size: 0.95rem;
+    }
+
+    .accept-btn {
+        width: 25%;
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+
+    .reject-btn {
+        width: 25%;
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .status-line {
+        flex-direction: column;
+    }
+
+    .status-line p {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+}

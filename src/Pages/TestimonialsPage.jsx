@@ -1,10 +1,14 @@
 import Footer from "../components/Footer";
 import HeroPages from "../components/HeroPages";
 import Testimonials from "../components/Testimonials";
+import Head from "../layout/WebsiteHead";
+import "../../src/dist/styles.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function TestimonialsPage() {
   return (
     <>
+    <Head />
       <section className="testimonial-page">
         <HeroPages name="Testimonials" />
         <Testimonials />

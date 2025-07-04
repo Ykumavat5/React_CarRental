@@ -8,10 +8,16 @@ import Testimonials from "../components/Testimonials";
 import Faq from "../components/Faq";
 import Download from "../components/Download";
 import Footer from "../components/Footer";
+import Head from "../layout/WebsiteHead";
+
+import "../../src/dist/styles.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Home() {
+  
   return (
     <>
+      <Head />
       <Hero />
       <BookCar />
       <PlanTrip />

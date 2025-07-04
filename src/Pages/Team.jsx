@@ -6,6 +6,9 @@ import Person3 from "../images/team/3.png";
 import Person4 from "../images/team/4.png";
 import Person5 from "../images/team/5.png";
 import Person6 from "../images/team/6.png";
+import Head from "../layout/WebsiteHead";
+import "../../src/dist/styles.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Team() {
   const teamPpl = [
@@ -18,6 +21,7 @@ function Team() {
   ];
   return (
     <>
+    <Head />
       <section className="team-page">
         <HeroPages name="Our Team" />
         <div className="cotnainer">

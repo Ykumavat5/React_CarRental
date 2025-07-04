@@ -1,0 +1,53 @@
+.ride-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ride-card-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ride-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .ride-card__img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .ride-card__info h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .ride-card__info p {
+    margin: 4px 0;
+  }
+  
+  .rides-list, .filter {
+    margin-top: -129px;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .filter {
+    margin-bottom: 20px;
+  }
+  
+  .filter select {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  

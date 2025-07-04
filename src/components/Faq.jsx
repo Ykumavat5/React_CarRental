@@ -1,7 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Faq() {
-  const [activeQ, setActiveQ] = useState("q1");
+  const [faqs, setFaqs] = useState([]); 
+  const [activeQ, setActiveQ] = useState(""); // State for active question, initialized to empty
+
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      try {
+        const response = await fetch("http://localhost:3034/api/v1/user/faqs", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "api_key": "123456789"
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const jsonResponse = await response.json(); // Renamed to avoid confusion with the 'data' key in the response
+        
+        // --- IMPORTANT CHANGE HERE ---
+        // Access the FAQ array from jsonResponse.data.result
+        if (jsonResponse.data && Array.isArray(jsonResponse.data.result)) {
+          setFaqs(jsonResponse.data.result);
+          if (jsonResponse.data.result.length > 0) {
+            setActiveQ(jsonResponse.data.result[0].id); // Use 'id' from your API for the active question
+          }
+        } else {
+          console.warn("API response did not contain an array at data.result:", jsonResponse);
+          setFaqs([]); // Ensure faqs is an empty array if data structure is unexpected
+        }
+        // --- END OF IMPORTANT CHANGE ---
+
+      } catch (error) {
+        console.log("API error:", error);
+        // You might want to set an error state here to display a message to the user
+      }
+    };
+
+    fetchFaqs();
+  }, []); 
 
   const openQ = (id) => {
     setActiveQ(activeQ === id ? "" : id);
@@ -30,76 +70,30 @@ function Faq() {
             </div>
 
             <div className="all-questions">
-              <div className="faq-box">
-                <div
-                  id="q1"
-                  onClick={() => openQ("q1")}
-                  className={`faq-box__question  ${getClassQuestion("q1")}`}
-                >
-                  <p>1. What is special about comparing rental car deals?</p>
-                  <i className="fa-solid fa-angle-down"></i>
-                </div>
-                <div
-                  id="q1"
-                  onClick={() => openQ("q1")}
-                  className={`faq-box__answer ${getClassAnswer("q1")}`}
-                >
-                  Comparing rental car deals is important as it helps find the
-                  best deal that fits your budget and requirements, ensuring you
-                  get the most value for your money. By comparing various
-                  options, you can find deals that offer lower prices,
-                  additional services, or better car models. You can find car
-                  rental deals by researching online and comparing prices from
-                  different rental companies.
-                </div>
-              </div>
-              <div className="faq-box">
-                <div
-                  id="q2"
-                  onClick={() => openQ("q2")}
-                  className={`faq-box__question ${getClassQuestion("q2")}`}
-                >
-                  <p>2. How do I find the car rental deals?</p>
-                  <i className="fa-solid fa-angle-down"></i>
-                </div>
-                <div
-                  id="q2"
-                  onClick={() => openQ("q2")}
-                  className={`faq-box__answer ${getClassAnswer("q2")}`}
-                >
-                  You can find car rental deals by researching online and
-                  comparing prices from different rental companies. Websites
-                  such as Expedia, Kayak, and Travelocity allow you to compare
-                  prices and view available rental options. It is also
-                  recommended to sign up for email newsletters and follow rental
-                  car companies on social media to be informed of any special
-                  deals or promotions.
-                </div>
-              </div>
-              <div className="faq-box">
-                <div
-                  id="q3"
-                  onClick={() => openQ("q3")}
-                  className={`faq-box__question ${getClassQuestion("q3")}`}
-                >
-                  <p>3. How do I find such low rental car prices?</p>
-                  <i className="fa-solid fa-angle-down"></i>
-                </div>
-                <div
-                  id="q3"
-                  onClick={() => openQ("q3")}
-                  className={`faq-box__answer ${getClassAnswer("q3")}`}
-                >
-                  Book in advance: Booking your rental car ahead of time can
-                  often result in lower prices. Compare prices from multiple
-                  companies: Use websites like Kayak, Expedia, or Travelocity to
-                  compare prices from multiple rental car companies. Look for
-                  discount codes and coupons: Search for discount codes and
-                  coupons that you can use to lower the rental price. Renting
-                  from an off-airport location can sometimes result in lower
-                  prices.
-                </div>
-              </div>
+              {faqs.length > 0 ? (
+                faqs.map((faqItem, index) => (
+                  <div className="faq-box" key={faqItem.id}> {/* Use faqItem.id for the key */}
+                    <div
+                      id={faqItem.id} // Use faqItem.id directly
+                      onClick={() => openQ(faqItem.id)}
+                      className={`faq-box__question ${getClassQuestion(faqItem.id)}`}
+                    >
+                      <p>{faqItem.position}. {faqItem.question}</p> {/* Use faqItem.position for numbering */}
+                      <i className="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div
+                      id={faqItem.id} // Use faqItem.id directly
+                      onClick={() => openQ(faqItem.id)}
+                      className={`faq-box__answer ${getClassAnswer(faqItem.id)}`}
+                    >
+                      {faqItem.answer}
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Loading FAQs or no FAQs available...</p>
+              )}
+              
             </div>
           </div>
         </div>

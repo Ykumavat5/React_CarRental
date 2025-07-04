@@ -1,86 +1,172 @@
-<div align='center'><img style="width:30%" src='https://user-images.githubusercontent.com/105128267/218077760-5694a4ac-4e37-4de7-b31f-268ccd27400a.png'/></div>
+# 🚘 RideShare Demo Platform
 
-# About the project
+A full-stack demo ride-sharing application built using **React.js** and **Node.js** with three separate web interfaces:
 
-  <p>A <b>car rental</b> website is an online platform that allows users to rent cars for personal or business use. The website provides an easy-to-use interface for searching, comparing, and reserving cars from a wide selection of vehicles that vary in make, model, size, and price.</p>
+- 🌐 **User Website** – Book and manage rides  
+- 🚗 **Driver Website** – Accept rides and track bookings  
+- 🛠️ **Admin Panel** – Monitor system and manage users/drivers  
 
-👉 Live Demo: <a href='https://car-rental-pcexwfwvp-devrahuls.vercel.app/'>Live Demo</a>
+---
 
-<h3>Build with:</h3>
+## 🧰 Tech Stack
 
-» Sass / Scss <br>
-» React JS
+| Layer       | Technology                     |
+|-------------|--------------------------------|
+| Frontend    | React.js, React Router DOM, Axios |
+| Backend     | Node.js, Express.js            |
+| Database    | MongoDB (with Mongoose)        |
+| Authentication | JWT (JSON Web Tokens)       |
+| Styling     | Tailwind CSS / Bootstrap       |
 
+---
 
+## 📁 Project Structure
 
-# React Project Setup
-
-This guide provides instructions to set up and run a React project on your local machine. The project also includes Sass as a dependency for styling.
-
-## Prerequisites
-
-Before you begin, ensure that you have the following installed on your machine:
-
--   Node.js (v12 or later)
--   npm (Node Package Manager, comes with Node.js)
-
-## Installation
-
-1.  Clone the project repository to your local machine using Git:
-    ```
-     git clone <repository_url>` 
-    ```
-2.  Navigate to the project directory:
-    
-    ```
-     cd <project_directory>
-    ``` 
-    
-3.  Install project dependencies by running the following command:
-    
-    ``` 
-     npm install
-    ```  
-    
-
-## Usage
-
-To run the React project locally, follow these steps:
-
-1.  Start the development server:
-
-    ``` 
-     npm start 
-    ``` 
-    This command will compile the project and start a local development server.
-    
-2.  Open your web browser and visit `http://localhost:3000`. The React application should be up and running.
-    
-
-## Styling with Sass
-
-This project uses Sass as a preprocessor for CSS. Sass files are located in the `src/styles/styles.sccs` directory. To compile Sass into CSS, follow these steps:
-
-1.  Run the following command in your project directory:
-    
 ```
- npm run build-css
-``` 
+rideshare-demo/
+│
+├── client/                 # Frontend code (React)
+│   ├── user/               # User web app
+│   ├── driver/             # Driver web app
+│   └── admin/              # Admin dashboard
+│
+├── server/                 # Backend code (Node.js + Express)
+│   ├── controllers/        # Business logic
+│   ├── routes/             # API endpoints
+│   ├── models/             # MongoDB models
+│   ├── middleware/         # Auth & error handling
+│   └── server.js           # Entry point
+│
+└── README.md               # Project documentation
+```
 
+---
 
-This command will compile Sass files and generate corresponding CSS files in the `src/styles/styles.sccs` directory.
-    
-2.  Link the generated CSS files in your React components to apply the styles.
-    
+## 🚀 Getting Started
 
-## Additional Scripts
+### 1. Clone the Repository
 
-The project includes additional scripts that you can run using the `npm run` command:
+```bash
+git clone https://github.com/yourusername/rideshare-demo.git
+cd rideshare-demo
+```
 
--   `test`: Run tests for the project.
--   `build`: Build the project for production.
--   `eject`: Eject the project configuration from create-react-app.
+### 2. Install Dependencies
 
-## Conclusion
+#### Backend (Node.js)
 
-You should now have the React project set up on your local machine. Feel free to explore and modify the code to meet your requirements. If you encounter any issues, please refer to the project's documentation or seek support from the project's maintainers.
+```bash
+cd server
+npm install
+```
+
+#### Frontend (React)
+
+```bash
+cd ../client
+npm install
+```
+
+### 3. Environment Setup
+
+Create `.env` files in both `/server` and `/client` directories:
+
+#### `/server/.env`
+
+```env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/rideshare
+JWT_SECRET=your_jwt_secret
+```
+
+#### `/client/.env`
+
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+---
+
+## 🧪 Running the Project
+
+### Start Backend
+
+```bash
+cd server
+npm run dev
+```
+
+### Start Frontend (choose one)
+
+```bash
+cd client
+
+# Run User App
+npm run user
+
+# Run Driver App
+npm run driver
+
+# Run Admin Panel
+npm run admin
+```
+
+> 📌 You can define these scripts in `client/package.json`:
+```json
+"scripts": {
+  "user": "cd user && npm start",
+  "driver": "cd driver && npm start",
+  "admin": "cd admin && npm start"
+}
+```
+
+---
+
+## 📦 API Overview
+
+| Method | Endpoint            | Description              |
+|--------|---------------------|--------------------------|
+| POST   | `/api/auth/login`   | Login (User/Driver/Admin)|
+| POST   | `/api/auth/register`| Register new user/driver |
+| GET    | `/api/rides`        | Get all rides            |
+| POST   | `/api/rides/book`   | Book a new ride (User)   |
+| PUT    | `/api/rides/:id`    | Update ride (Driver/Admin) |
+| GET    | `/api/admin/stats`  | Get dashboard metrics    |
+
+---
+
+## ✅ Features
+
+### 👤 User Website
+- Register / Login  
+- Book a ride  
+- View ride history  
+- Track ride status  
+
+### 🚗 Driver Website
+- Accept or decline rides  
+- View assigned rides  
+- Update ride progress  
+
+### 🛡️ Admin Panel
+- View/manage users & drivers  
+- Monitor ride activity  
+- View dashboard analytics  
+
+---
+
+## 🧑‍💻 Contributing
+
+1. Fork the repository  
+2. Create a feature branch: `git checkout -b feature/new-feature`  
+3. Commit your changes  
+4. Push to GitHub  
+5. Open a pull request  
+
+---
+
+## 📫 Contact
+
+Developed by Yogesh Kumavat
+📧 Email: yogeshkumavat42615@gmail.com  
+🌐 GitHub: [https://github.com/Ykumavat5]

@@ -20,12 +20,15 @@ function ChooseUs() {
                 <h2>Best valued deals you will ever find</h2>
                 <p>
                   Discover the best deals you'll ever find with our unbeatable
-                  offers. We're dedicated to providing you with the best value
+                  offers. 
+                  We're dedicated to providing you with the best value
                   for your money, so you can enjoy top-quality services and
-                  products without breaking the bank. Our deals are designed to
+                  products without breaking the bank. 
+                  Our deals are designed to
                   give you the ultimate renting experience, so don't miss out on
                   your chance to save big.
                 </p>
+                
                 <a href="#home">
                   Find Details &nbsp;
                   <i className="fa-solid fa-angle-right"></i>
@@ -61,6 +64,14 @@ function ChooseUs() {
                     <p>
                       Enjoy peace of mind with our no hidden charges policy. We
                       believe in transparent and honest pricing.
+                    </p>
+                    <p>
+                    Successful developers are not just fast typists, but also clear thinkers. 
+                    They write code that is clean, efficient, and easy to understand. 
+                    Typing quickly helps save time, but writing code thoughtfully prevents mistakes. 
+                    Practice builds speed, while reading and reviewing code sharpens attention to detail. 
+                    The key is finding a balance between speed and precision, allowing you to work smarter, 
+                    not just faster, in any programming environment.
                     </p>
                   </div>
                 </div>
