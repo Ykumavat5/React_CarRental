@@ -62,9 +62,11 @@ car-rental/
 
 
 ## Admin panel screenshots
-![Blog Screenshot 1](https://raw.githubusercontent.com/Ykumavat5/Laravel_BlogPosts/main/public/assets/images/Screenshot%20from%202025-07-03%2014-56-40.png)
+![Blog Screenshot 1](public/assets/images/Screenshot%20from%202025-07-03%2014-56-40.png)
 
-![Blog Screenshot 2](https://raw.githubusercontent.com/Ykumavat5/Laravel_BlogPosts/main/public/assets/images/Screenshot%20from%202025-07-03%2014-56-24.png)
+
+![Blog Screenshot 2](public/assets/images/Screenshot%20from%202025-07-03%2014-56-24.png)
+
 
 
 
