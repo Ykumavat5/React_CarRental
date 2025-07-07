@@ -65,7 +65,7 @@ car-rental/
 ![Blog Screenshot 1](public/assets/images/Screenshot%20from%202025-07-03%2014-56-40.png)
 
 
-![Blog Screenshot 2](public/assets/images/Screenshot%20from%202025-07-03%2014-56-24.png)
+![Blog Screenshot 2](public/assets/images/Screenshot%20from%202025-07-03%2014-57-24.png)
 
 
 
